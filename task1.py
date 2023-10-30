@@ -34,3 +34,18 @@ def panagram(n):
 n=input("Enter a String:")
 # n="The quick brown fox jumps over the lazy dog dryy"
 print(panagram(n))
+
+
+def freq(n):
+    d={}
+    for i in n:
+        if i.isalpha():
+            i=i.lower()
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+    return d
+                    
+n=input("Enter a String:")
+print(freq(n))
