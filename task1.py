@@ -10,3 +10,13 @@ def fizzbizz(n):
             print(i)
 n=int(input("Enter a number:"))
 fizzbizz(n)
+
+
+def palindrome(n):
+    if n==n[::-1]:
+        print("True")
+    else:
+        print("False")
+
+n=input("Enter a String:")
+palindrome(n)
