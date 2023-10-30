@@ -20,3 +20,17 @@ def palindrome(n):
 
 n=input("Enter a String:")
 palindrome(n)
+
+
+def panagram(n):
+    alpha="abcdefghijklmnopqrstuvwxyz"
+    # print(n)
+    for i in alpha:
+        if i not in n.lower():
+            return False
+    else:
+        return True
+
+n=input("Enter a String:")
+# n="The quick brown fox jumps over the lazy dog dryy"
+print(panagram(n))
