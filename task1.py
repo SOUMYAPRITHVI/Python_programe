@@ -8,19 +8,11 @@ def fizzbizz(n):
             print("Bizz")
         else:
             print(i)
-n=int(input("Enter a number:"))
-fizzbizz(n)
 
 
-def palindrome(n):
-    if n==n[::-1]:
-        print("True")
-    else:
-        print("False")
-
-n=input("Enter a String:")
-palindrome(n)
-
+def palindrome(s):
+    return s==s[::-1]
+    
 
 def panagram(n):
     alpha="abcdefghijklmnopqrstuvwxyz"
@@ -30,10 +22,6 @@ def panagram(n):
             return False
     else:
         return True
-
-n=input("Enter a String:")
-# n="The quick brown fox jumps over the lazy dog dryy"
-print(panagram(n))
 
 
 def freq(n):
@@ -47,5 +35,13 @@ def freq(n):
                 d[i]=1
     return d
                     
-n=input("Enter a String:")
-print(freq(n))
+
+if __name__=="__main__":
+    n=int(input("Enter a number:"))	 #import guard
+    fizzbizz(n)
+    s=input("Enter a String to check Palindrome:")
+    print(palindrome(s))
+    s=input("Enter a String to check Panagram:")
+    print(panagram(s))
+    s=input("Enter a String:")
+    print(freq(s))
