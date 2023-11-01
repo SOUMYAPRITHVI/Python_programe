@@ -13,4 +13,4 @@ def test_mul():
 def test_div():
     assert evaluate("52/")==2
 def test_exp():
-    assert evaluate("542/*6+")==18
+    assert evaluate("542/*6+")==16
