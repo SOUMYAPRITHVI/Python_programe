@@ -11,7 +11,10 @@ def fizzbizz(n):
 
 
 def palindrome(s):
-    return s==s[::-1]
+    if type(s)==str:
+        return s==s[::-1]
+    else:
+        return False
     
 
 def panagram(n):
@@ -26,13 +29,12 @@ def panagram(n):
 
 def freq(n):
     d={}
+    n=n.lower()
     for i in n:
-        if i.isalpha():
-            i=i.lower()
-            if i in d:
-                d[i]+=1
-            else:
-                d[i]=1
+        if i in d:
+            d[i]+=1
+        else:
+            d[i]=1
     return d
                     
 

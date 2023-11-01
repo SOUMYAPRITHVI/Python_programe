@@ -1,20 +1,19 @@
 import unittest
+from task1 import panagram,palindrome,freq
 
-def freq(s):
-    d={}
-    s=s.lower()
-    for i in s:
-        if i in d:
-            d[i]+=1
-        else:
-            d[i]=1
-    return d
+class TestPanagram(unittest.TestCase):
+    def testIsPanagram(self):
+        sentence = "the quick brown fox jumps over the lazy dog"
+        self.assertTrue(panagram(sentence))
 
-def palindrome(s):
-    if type(s)==str:
-        return s==s[::-1]
-    else:
-        return False
+    def testIsNotPanagram(self):
+        sentence = "the quick brown fox jumped over the lazy dog"
+        self.assertFalse(panagram(sentence))
+    
+    def testNullInput(self):
+        ret = panagram("")
+        self.assertFalse(ret)
+
 
 class TestPalindrome(unittest.TestCase):
     def testIsPalindrome(self):
@@ -36,9 +35,10 @@ class TestPalindrome(unittest.TestCase):
   
 
 class TestFreq(unittest.TestCase):
-    def testIsFreq(self):
-        sentence = "malayalam"
-        self.assertTrue(freq(sentence))
+    def testDict(self):
+        s = "aabbc @?a"
+        expected_dict={'a': 3,'b': 2,'c': 1,' ':1,'@': 1,'?': 1}
+        self.assertDictEqual(expected_dict,freq(s))
    
     def testNullInput(self):
         ret = freq("")
