@@ -14,3 +14,5 @@ def test_div():
     assert evaluate("52/")==2
 def test_exp():
     assert evaluate("542/*6+")==16
+def test_alpha():
+    assert not evaluate("2b+?")
